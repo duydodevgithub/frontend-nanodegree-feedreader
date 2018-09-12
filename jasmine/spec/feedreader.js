@@ -66,8 +66,18 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-            it("Menu changes correctly when click", function(){
-                
+            it("Menu appears correctly when click", function(){
+                spyOnEvent($('.menu-icon-link'), 'click')
+                $('.menu-icon-link').click();
+                var test_menu = $("body").hasClass("menu-hidden");
+                expect(test_menu).not.toBe(true);
+            });
+
+            it("Menu disappears when click 2 times", function(){
+                spyOnEvent($('.menu-icon-link'), 'click')
+                $('.menu-icon-link').click();
+                var test_menu = $("body").hasClass("menu-hidden");
+                expect(test_menu).toBe(true);
             })
         
         });
