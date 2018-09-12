@@ -71,11 +71,15 @@ $(function() {
                 $('.menu-icon-link').click();
                 var test_menu = $("body").hasClass("menu-hidden");
                 expect(test_menu).not.toBe(true);
+                $('.menu-icon-link').click();
+
             });
 
             it("Menu disappears when click 2 times", function(){
                 spyOnEvent($('.menu-icon-link'), 'click')
                 $('.menu-icon-link').click();
+                $('.menu-icon-link').click();
+
                 var test_menu = $("body").hasClass("menu-hidden");
                 expect(test_menu).toBe(true);
             })
