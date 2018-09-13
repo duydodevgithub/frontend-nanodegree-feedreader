@@ -116,10 +116,12 @@ $(function() {
      * the menu, load the feed, and prevent the default action
      * (following the link) from occurring.
      */
+    
     feedList.on('click', 'a', function() {
         var item = $(this);
 
         $('body').addClass('menu-hidden');
+        // console.log(item.data('id'));
         loadFeed(item.data('id'));
         return false;
     });
