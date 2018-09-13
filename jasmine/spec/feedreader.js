@@ -125,8 +125,8 @@ $(function() {
                     done();
                 })
             });
-            it("Content actually change when newfeed is loaded", function(){
-                expect(content1 == content2).toBe(false);
+            it("Content actually change when newfeed is loaded", function(done){
+                expect(content1 != content2).toBe(true);
                 done();
             })
 
